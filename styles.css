@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    color: #333;
+}
+.screen {
+    width: 80%;
+    height: 20px;
+    background-color: #333;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+.seating {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.seat {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    position: relative;
+}
+.seat:hover {
+    background-color: #ddd;
+}
+.occupied {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+.selected {
+    background-color: #ff5e3a !important;
+    color: #fff;
+}
+.column-label {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007aff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    .screen, .seating, .row {
+        width: 100%;
+    }
+    .row {
+        flex-wrap: wrap;
+    }
+}
