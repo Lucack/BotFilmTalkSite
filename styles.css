@@ -89,8 +89,14 @@ button:hover {
     background-color: #0056b3;
 }
 
-@media screen and (max-width: 360px) {
-    .screen, .seating, .row {
+@media screen and (min-width: 1080) {
+    .screen, .row {
         width: 100%;
     }
+    .seating{
+        width: 50%;
+        align-items: center;
+        justify-content: space-around;
+    }
 }
+
