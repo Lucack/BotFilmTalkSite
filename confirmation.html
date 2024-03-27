@@ -9,12 +9,21 @@
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            position: relative;
         }
         h1 {
             color: #333;
@@ -35,19 +44,45 @@
         button:hover {
             background-color: #0056b3;
         }
+        .back-to-service {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #0f465479;
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .back-to-service:hover {
+            color: #0f465479;
+        }
+        .arrow-up {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 15px solid #31a1a1;
+            margin-right: 5px;
+        }
+        .text-back {
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
     </style>
 </head>
 <body>
-    <h1>Assentos Selecionados!</h1>
-    <p>Já pode ir preparando a pipoca, pois seus assentos estão garantidos! 🍿</p>
-    <button onclick="returnToService()">Alterar Seleção</button>
-
-    <script>
-        // Função para retornar ao atendimento
-        function returnToService() {
-            // Redirecionar para a página de atendimento (index.html)
-            window.location.href = "index.html";
-        }
-    </script>
+    <div class="back-to-service" onclick="returnToService()">
+        <div class="arrow-up"></div>
+        <span class="text-back">Voltar ao atendimento</span>
+    </div>
+    <div class="container">
+        <h1>Assentos Selecionados!</h1>
+        <p>Já pode ir preparando a pipoca, pois seus assentos estão garantidos! 🍿</p>
+        <button onclick="returnToService()">Alterar Seleção</button>
+    </div>
 </body>
 </html>
