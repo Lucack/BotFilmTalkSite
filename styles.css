@@ -32,22 +32,23 @@ h1 {
 .row {
     display: flex;
     align-items: center;
-    justify-content: center; /* Adicionado para centralizar as cadeiras */
+    justify-content: center;
     margin-bottom: 5px;
 }
 
 .seat {
     background-color: #eee;
     border: 1px solid #ccc;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     margin: 2px;
-    line-height: 20px;
+    line-height: 18px;
     text-align: center;
     cursor: pointer;
     border-radius: 3px;
     transition: background-color 0.3s;
     position: relative;
+    font-size: 10px; /* Tamanho da fonte das cadeiras */
 }
 
 .seat:hover {
@@ -62,13 +63,14 @@ h1 {
 .selected {
     background-color: #ff5e3a !important;
     color: #fff;
+    font-size: 8px; /* Tamanho da fonte das cadeiras selecionadas */
 }
 
 .column-label {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     margin: 2px;
-    line-height: 20px;
+    line-height: 18px;
     text-align: center;
     font-weight: bold;
 }
@@ -89,16 +91,12 @@ button:hover {
     background-color: #0056b3;
 }
 
-@media screen and (min-width: 1080) {
-    .screen, .row {
+@media screen and (max-width: 350px) {
+    .screen, .seating, .row {
         width: 100%;
     }
-    .seating{
-        width: 50%;
-        align-items: center;
-        justify-content: space-around;
-    }
 }
+
 
 .nada{
     height: 20px;
