@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FilmTalk</title>
+    <title>Escolha de Cadeiras</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>FilmTalk</h2>
+    <h1>Escolha de Cadeiras</h1>
+    <div class="screen"></div>
     <div class="seating"></div>
-    <button onclick="confirmSelection()">Confirmar</button>
+    <button onclick="showConfirmation()">Confirmar</button>
+
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeConfirmation()">&times;</span>
+            <p>Cadeiras selecionadas:</p>
+            <ul id="selectedSeatsList"></ul>
+            <button onclick="closeConfirmation()">OK</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
+
     <div class="nada"></div>
 </body>
 </html>
