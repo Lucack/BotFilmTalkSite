@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Compra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007aff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .rating-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .rating-stars {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .rating-star {
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .rating-star:hover {
+            color: gold;
+        }
+        .thanks-popup {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            transition: transform 0.5s ease-in-out;
+            z-index: 1001;
+        }
+        .thanks-popup.hidden {
+            transform: translateY(100%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Compra Confirmada!</h1>
+    <p>Seus ingressos foram adquiridos com sucesso. Aproveite o filme! 🎥</p>
+    <button id="avaliationButton"onclick="showRatingPopup()">Avaliar Serviço</button>
+
+    <div id="ratingPopup" class="rating-popup">
+        <h2>Avaliar Serviço</h2>
+        <div class="rating-stars">
+            <span class="rating-star" onclick="fillStars(1)">★</span>
+            <span class="rating-star" onclick="fillStars(2)">★</span>
+            <span class="rating-star" onclick="fillStars(3)">★</span>
+            <span class="rating-star" onclick="fillStars(4)">★</span>
+            <span class="rating-star" onclick="fillStars(5)">★</span>
+        </div>
+        <button onclick="submitRating()">Enviar Avaliação</button>
+    </div>
+
+    <div id="thanksPopup" class="thanks-popup hidden">
+        <p>Obrigado pela avaliação!</p>
+    </div>
+
+    <script>
+        // Variável para armazenar a avaliação
+        let rating = 0;
+
+        // Função para exibir o popup de avaliação
+        function showRatingPopup() {
+            const ratingPopup = document.getElementById("ratingPopup");
+            ratingPopup.style.display = "block";
+        }
+
+        // Função para preencher as estrelas ao clicar
+        function fillStars(stars) {
+            rating = stars;
+            const starElements = document.querySelectorAll(".rating-star");
+            starElements.forEach((star, index) => {
+                if (index < stars) {
+                    star.style.color = "gold";
+                } else {
+                    star.style.color = "";
+                }
+            });
+        }
+
+        // Função para enviar a avaliação
+        function submitRating() {
+            // Aqui você pode enviar a avaliação para o servidor, se necessário
+            // Após enviar, exiba o popup de agradecimento
+            const thanksPopup = document.getElementById("thanksPopup");
+            thanksPopup.classList.remove("hidden");
+            setTimeout(() => {
+                thanksPopup.classList.add("hidden");
+            }, 2000); // Tempo em milissegundos antes de esconder o
+            // Exibir o popup de agradecimento
+            const ratingPopup = document.getElementById("ratingPopup");
+            ratingPopup.style.display = "none";
+            avaliationButton.style.display = "none";
+            // Ocultar o popup de agradecimento após alguns segundos
+            setTimeout(() => {
+                thanksPopup.classList.add("hidden");
+            }, 2000); // Tempo em milissegundos antes de esconder o popup de agradecimento
+        }
+    </script>
+</body>
+</html>

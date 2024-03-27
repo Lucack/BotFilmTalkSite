@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalização de Compra</title>
+    <link rel="stylesheet" href="fin.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Finalização de Compra</h1>
+        <h2 id="filmTitle" class="subtitle"></h2>
+        <div class="poster-container">
+            <img id="poster" src="" alt="Pôster do Filme">
+        </div>
+        <div class="data-container" id="dataContainer">
+            <!-- Os dados de compra serão inseridos aqui -->
+        </div>
+        <div class="payment-options">
+            <h2>Opções de Pagamento</h2>
+            <button onclick="openPaymentModal('cartao')" class="payment-button">Cartão de Crédito</button>
+            <button onclick="openPaymentModal('boleto')" class="payment-button">Boleto Bancário</button>
+        </div>
+    </div>
+
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePaymentModal()">&times;</span>
+            <h2 id="paymentMethod"></h2>
+            <p>Confirme o pagamento clicando no botão abaixo:</p>
+          
+            <button id="confirmButton" onclick="confirmPayment()">Pagar</button>
+
+        </div>
+    </div>
+
+    <script src="fin.js"></script>
+    
+</body>
+</html>
