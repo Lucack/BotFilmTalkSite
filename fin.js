@@ -71,15 +71,16 @@ function getEmoji(key) {
 
 // Função para exibir o pôster do filme na página
 function displayFilmPoster(filmsData, buyingFilmTitle) {
-    const film = filmsData.find(film => film.Título === buyingFilmTitle);
+    const film = filmsData.find(film => film.Title === buyingFilmTitle);
     if (film) {
         const posterImg = document.getElementById("poster");
-        posterImg.src = film.Pôster;
-        posterImg.alt = `Pôster do Filme ${film.Título}`;
+        posterImg.src = film.Poster;
+        posterImg.alt = `Pôster do Filme ${film.Title}`;
     } else {
         console.error("Pôster do filme não encontrado.");
     }
 }
+
 
 // Função para traduzir as chaves dos dados de compra
 function translateKey(key) {
